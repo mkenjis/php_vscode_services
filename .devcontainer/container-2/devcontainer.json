@@ -1,0 +1,7 @@
+{
+	"name": "mysql-server",
+	"dockerComposeFile": [ "../../docker-compose.yml" ],
+	"service": "container-2",
+	"shutdownAction": "none",
+	"workspaceFolder": "/workspace/container-2-src"
+}

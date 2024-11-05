@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  container-1:
+    image: php-debian
+	build: Dockerfile
+    volumes:
+      - .:/workspace:cached
+    command: sleep infinity
+    links: 
+      - container2
+  
+  container-2:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=admsys123
+      - MYSQL_DATABASE=livro
+      - MYSQL_USER=libvo
+      - MYSQL_PASSWORD=Admsys!23
+    volumes:
+      - .:/workspace:cached

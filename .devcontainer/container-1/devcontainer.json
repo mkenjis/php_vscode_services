@@ -1,0 +1,8 @@
+{
+	"name": "php-debian",
+	//"image": "mcr.microsoft.com/devcontainers/base:bullseye"
+	"dockerComposeFile": [ "../../docker-compose.yml" ],
+	"service": "container-1",
+	"shutdownAction": "none",
+	"workspaceFolder": "/workspace/container-1-src"
+}

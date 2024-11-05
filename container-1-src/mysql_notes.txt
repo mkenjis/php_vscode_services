@@ -1,0 +1,29 @@
+docker image pull mysql:5.6
+
+docker container run -d --name mysql1 -v $(pwd)/data-dir:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.6
+
+docker container exec -it mysql1 bash
+
+mysql -uroot -p
+
+create database livro;
+
+use livro;
+
+
+create table usuario (
+  id int(11) auto_increment,
+  nome varchar(32),
+  email varchar(50),
+  data_cadastro datetime,
+  constraint key1 primary key (id));
+  
+GRANT ALL PRIVILEGES ON livro.* TO 'livro'@'%' IDENTIFIED BY 'Admsys!23';  
+
+-------------------
+
+$ docker image build -t myapp .
+
+$ docker container run -it -p 80:80 myapp bash
+
+root@6caa300343a3:/var/www/html# service apache2 start
