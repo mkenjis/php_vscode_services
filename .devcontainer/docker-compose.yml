@@ -2,8 +2,8 @@ version: '3'
 
 services:
   container-1:
-    image: php-debian
-    build: Dockerfile
+    build:
+      context: .
     volumes:
       - .:/workspace:cached
     command: sleep infinity
